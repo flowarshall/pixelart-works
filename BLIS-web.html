@@ -116,7 +116,7 @@
                 <div class="font-bold text-[#005AEB] mb-4 text-lg"><a href="https://careers.nhn.com/" target="_blank" class="hover:underline flex items-center gap-2">🔗 NHN Careers <span class="text-xs text-slate-400 font-normal">(https://careers.nhn.com/)</span></a></div>
                 
                 <div class="mb-5 rounded-lg overflow-hidden border border-slate-200 shadow-sm max-w-4xl">
-                    <img src="http://googleusercontent.com/image_collection/image_retrieval/42644530-1698-4ba9-bbee-a50bc1f30025" alt="NHN Careers Reference" class="w-full object-cover">
+                    <img src="https://private-user-images.githubusercontent.com/113972837/577790569-346a5aea-b1d5-4a49-b97c-ffd60a413a5e.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzYxNDYyMTcsIm5iZiI6MTc3NjE0NTkxNywicGF0aCI6Ii8xMTM5NzI4MzcvNTc3NzkwNTY5LTM0NmE1YWVhLWIxZDUtNGE0OS1iOTdjLWZmZDYwYTQxM2E1ZS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNDE0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDQxNFQwNTUxNTdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1mNDlmMTI2NWZlNGQ4ZmEzOTlkM2VjNjkwNWRiYTFlYzg2YjY3MDFlZDEyNDFjMTRiNGViMDY2MGQ3Njg4MGU5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.UCX52XZjRva06SUWoNAubpGES4QQfhHb1ShylPbzVk0" alt="NHN Careers Reference" class="w-full object-cover">
                 </div>
 
                 <ul class="list-disc pl-5 text-slate-700 leading-relaxed space-y-3">
@@ -199,7 +199,7 @@
             </div>
         </div>
         
-        <!-- Widget Mockup (특정 학과 국한 탈피, 89명 대통합 그래프 적용) -->
+        <!-- Widget Mockup (특정 학과 국한 탈피, y축 100 기준 89명 대통합 그래프 적용, 누적 버튼 삭제) -->
         <div class="mockup-container">
             <span class="mockup-label">UI Mockup : 커스텀 디자인 섹션 (Typography + SVG Chart)</span>
             <div class="bg-white rounded-2xl p-10 border border-slate-200 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-12">
@@ -212,54 +212,50 @@
                         <span class="text-[#005AEB]">25년 대비 150% 성장</span>
                     </h3>
                     <p class="text-slate-500 text-base leading-relaxed mb-6">최상위권 강사진의 압도적인 전문성으로, 연고대 편입을 넘어 <strong>인서울 TOP7까지 합격의 스펙트럼을 폭발적으로 확장</strong>합니다.</p>
-                    <div class="flex items-center gap-3">
-                        <div class="bg-[#111827] text-white px-5 py-3 rounded-lg font-bold shadow-md">누적 합격생 89명</div>
-                        <div class="text-slate-400 text-sm font-medium">(*2026년 유료수강생 기준)</div>
-                    </div>
+                    <p class="text-sm font-bold text-slate-400 mt-2">(*2026년 단일 연도 유료수강생 합격 기준)</p>
                 </div>
 
-                <!-- Right: SVG Growth Chart Representation -->
-                <div class="w-full lg:w-3/5 h-[300px] flex items-end justify-between gap-2 md:gap-4 px-2 md:px-6 border-b-2 border-slate-100 pb-2 relative">
-                    <!-- Background Grid Lines (Optional) -->
-                    <div class="absolute w-full border-t border-dashed border-slate-200 top-1/4 left-0 z-0"></div>
-                    <div class="absolute w-full border-t border-dashed border-slate-200 top-2/4 left-0 z-0"></div>
-                    <div class="absolute w-full border-t border-dashed border-slate-200 top-3/4 left-0 z-0"></div>
+                <!-- Right: SVG Growth Chart Representation (Max y-axis = 100) -->
+                <div class="w-full lg:w-3/5 h-[350px] flex items-end justify-between gap-2 md:gap-4 px-2 md:px-6 border-b-2 border-slate-100 pb-2 relative">
+                    <!-- Background Grid Lines (100% max, 25% intervals) -->
+                    <div class="absolute w-full border-t border-dashed border-slate-200 top-[25%] left-0 z-0"></div> <!-- 75% 높이 선 -->
+                    <div class="absolute w-full border-t border-dashed border-slate-200 top-[50%] left-0 z-0"></div> <!-- 50% 높이 선 -->
+                    <div class="absolute w-full border-t border-dashed border-slate-200 top-[75%] left-0 z-0"></div> <!-- 25% 높이 선 -->
                     
-                    <!-- 2021 -->
-                    <div class="flex flex-col items-center w-full z-10 group cursor-default">
+                    <!-- 2021 (4명 = 4%) -->
+                    <div class="flex flex-col items-center w-full h-full justify-end z-10 group cursor-default">
                         <span class="text-slate-500 font-bold mb-2 opacity-0 group-hover:opacity-100 transition duration-300">4명</span>
-                        <div class="w-full bg-blue-200 hover:bg-blue-300 transition duration-300 rounded-t-sm" style="height: 5%;"></div>
+                        <div class="w-full bg-blue-200 hover:bg-blue-300 transition duration-300 rounded-t-sm" style="height: 4%;"></div>
                         <span class="text-xs text-slate-400 mt-3 font-medium">2021</span>
                     </div>
-                    <!-- 2022 -->
-                    <div class="flex flex-col items-center w-full z-10 group cursor-default">
+                    <!-- 2022 (10명 = 10%) -->
+                    <div class="flex flex-col items-center w-full h-full justify-end z-10 group cursor-default">
                         <span class="text-slate-500 font-bold mb-2 opacity-0 group-hover:opacity-100 transition duration-300">10명</span>
-                        <div class="w-full bg-blue-300 hover:bg-blue-400 transition duration-300 rounded-t-sm" style="height: 12%;"></div>
+                        <div class="w-full bg-blue-300 hover:bg-blue-400 transition duration-300 rounded-t-sm" style="height: 10%;"></div>
                         <span class="text-xs text-slate-400 mt-3 font-medium">2022</span>
                     </div>
-                    <!-- 2023 -->
-                    <div class="flex flex-col items-center w-full z-10 group cursor-default">
+                    <!-- 2023 (20명 = 20%) -->
+                    <div class="flex flex-col items-center w-full h-full justify-end z-10 group cursor-default">
                         <span class="text-slate-600 font-bold mb-2 opacity-0 group-hover:opacity-100 transition duration-300">20명</span>
-                        <div class="w-full bg-blue-400 hover:bg-[#005AEB] transition duration-300 rounded-t-sm" style="height: 25%;"></div>
+                        <div class="w-full bg-blue-400 hover:bg-[#005AEB] transition duration-300 rounded-t-sm" style="height: 20%;"></div>
                         <span class="text-xs text-slate-400 mt-3 font-medium">2023</span>
                     </div>
-                    <!-- 2024 -->
-                    <div class="flex flex-col items-center w-full z-10 group cursor-default">
+                    <!-- 2024 (40명 = 40%) -->
+                    <div class="flex flex-col items-center w-full h-full justify-end z-10 group cursor-default">
                         <span class="text-[#005AEB] font-bold mb-2 opacity-0 group-hover:opacity-100 transition duration-300">40명</span>
-                        <div class="w-full bg-[#005AEB] opacity-80 hover:opacity-100 transition duration-300 rounded-t-sm" style="height: 48%;"></div>
+                        <div class="w-full bg-[#005AEB] opacity-80 hover:opacity-100 transition duration-300 rounded-t-sm" style="height: 40%;"></div>
                         <span class="text-xs text-slate-400 mt-3 font-medium">2024</span>
                     </div>
-                    <!-- 2025 -->
-                    <div class="flex flex-col items-center w-full z-10 group cursor-default">
+                    <!-- 2025 (60명 = 60%) -->
+                    <div class="flex flex-col items-center w-full h-full justify-end z-10 group cursor-default">
                         <span class="text-[#005AEB] font-bold mb-2">60명</span>
-                        <div class="w-full bg-[#005AEB] hover:bg-[#111827] transition duration-300 rounded-t-sm" style="height: 70%;"></div>
+                        <div class="w-full bg-[#005AEB] hover:bg-[#111827] transition duration-300 rounded-t-sm" style="height: 60%;"></div>
                         <span class="text-xs text-slate-500 mt-3 font-bold">2025</span>
                     </div>
-                    <!-- 2026 -->
-                    <div class="flex flex-col items-center w-full z-10 group cursor-default">
+                    <!-- 2026 (89명 = 89%) -->
+                    <div class="flex flex-col items-center w-full h-full justify-end z-10 group cursor-default">
                         <span class="text-[#111827] font-black text-xl md:text-2xl mb-2 drop-shadow-sm">89명</span>
-                        <div class="w-full bg-[#111827] rounded-t-sm relative shadow-lg" style="height: 100%;">
-                            <!-- Accent top bar -->
+                        <div class="w-full bg-[#111827] rounded-t-sm relative shadow-lg" style="height: 89%;">
                             <div class="absolute top-0 left-0 w-full h-1.5 bg-[#00A8FF]"></div>
                         </div>
                         <span class="text-sm text-slate-800 mt-3 font-black">2026</span>
@@ -271,7 +267,7 @@
         <table class="table-strategy">
             <tr>
                 <th>기획 의도</th>
-                <td>특정 학과(상경계 등)에만 국한된 학원이라는 편견을 원천 차단하기 위해, 세부 실적보다는 <strong>'연고대 최종합격 89명'이라는 거대한 전체 파이를 단일 시각화(그래프)하여 전면에 내세웁니다.</strong> 이를 통해 신생 부서(이공, 논술 등)의 약점을 완벽히 커버하고 압도적인 후광 효과(Halo Effect)를 창출합니다.</td>
+                <td>특정 학과(상경계 등)에만 국한된 학원이라는 편견을 원천 차단하기 위해, 세부 실적보다는 <strong>'2026년 연고대 최종합격 89명'이라는 거대한 단일 연도 성과를 직관적인 그래프로 시각화하여 전면에 내세웁니다.</strong> 이를 통해 신생 부서(이공, 논술 등)의 약점을 완벽히 커버하고 압도적인 후광 효과(Halo Effect)를 창출합니다.</td>
             </tr>
             <tr>
                 <th>기대 효과</th>
@@ -456,18 +452,143 @@
                 <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#005AEB] to-[#00A8FF] rounded-t-2xl"></div>
                 
                 <h3 class="text-center text-slate-900 text-2xl font-bold mb-8 tracking-wide">1:1 맞춤 합격 진단 신청</h3>
-                <form class="flex flex-col gap-5">
-                    <input type="text" placeholder="성함을 입력해주세요" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-5 py-4 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#005AEB]/20 focus:border-[#005AEB] transition">
-                    <input type="tel" placeholder="연락처 ( '-' 제외 )" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-5 py-4 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#005AEB]/20 focus:border-[#005AEB] transition">
-                    <select class="w-full bg-slate-50 border border-slate-200 rounded-lg px-5 py-4 text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#005AEB]/20 focus:border-[#005AEB] transition appearance-none">
-                        <option value="">목표 전형을 선택해주세요 (1지망)</option>
-                        <option value="yonsei_biz">연세대 상경계</option>
-                        <option value="sky_sci">연고대 이공계</option>
-                        <option value="sky_essay">연고대 논술</option>
-                        <option value="top7">인서울 TOP7 편입</option>
-                    </select>
-                    <button type="button" class="mt-4 w-full bg-[#111827] text-white font-black text-lg py-5 rounded-lg hover:bg-black transition shadow-lg border border-[#111827]">무료 진단 리포트 받기</button>
+                
+                <!-- 폼 시작 (Label 외부 분리 및 구조 개편) -->
+                <form class="flex flex-col gap-6 text-left">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <!-- 성함 -->
+                        <div>
+                            <label class="block text-sm font-bold text-slate-800 mb-2">성함 <span class="text-red-500">*</span></label>
+                            <input type="text" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-slate-800 focus:outline-none focus:border-[#005AEB] transition">
+                        </div>
+                        <!-- 희망대학/학과 -->
+                        <div>
+                            <label class="block text-sm font-bold text-slate-800 mb-2">희망대학/학과</label>
+                            <input type="text" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-slate-800 focus:outline-none focus:border-[#005AEB] transition">
+                        </div>
+
+                        <!-- 현재대학/학과 -->
+                        <div>
+                            <label class="block text-sm font-bold text-slate-800 mb-2">현재대학/학과</label>
+                            <input type="text" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-slate-800 focus:outline-none focus:border-[#005AEB] transition">
+                        </div>
+                        <!-- 현재 학년 -->
+                        <div>
+                            <label class="block text-sm font-bold text-slate-800 mb-2">현재 학년 <span class="text-red-500">*</span></label>
+                            <div class="relative">
+                                <select class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-slate-700 focus:outline-none focus:border-[#005AEB] transition appearance-none">
+                                    <option value="" class="text-slate-400">(선택)</option>
+                                    <option>1학년 재학</option>
+                                    <option>2학년 재학</option>
+                                    <option>2학년 이상 수료</option>
+                                    <option>졸업 또는 졸업 예정</option>
+                                    <option>기타</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-400">
+                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 나이 -->
+                        <div>
+                            <label class="block text-sm font-bold text-slate-800 mb-2">나이</label>
+                            <input type="text" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-slate-800 focus:outline-none focus:border-[#005AEB] transition">
+                        </div>
+                        <!-- 연락처 (3칸) -->
+                        <div>
+                            <label class="block text-sm font-bold text-slate-800 mb-2">연락처 <span class="text-red-500">*</span></label>
+                            <div class="flex items-center gap-2">
+                                <input type="tel" class="w-1/3 bg-slate-50 border border-slate-200 rounded-lg px-2 py-3 text-center text-slate-800 focus:outline-none focus:border-[#005AEB] transition">
+                                <span class="text-slate-400">-</span>
+                                <input type="tel" class="w-1/3 bg-slate-50 border border-slate-200 rounded-lg px-2 py-3 text-center text-slate-800 focus:outline-none focus:border-[#005AEB] transition">
+                                <span class="text-slate-400">-</span>
+                                <input type="tel" class="w-1/3 bg-slate-50 border border-slate-200 rounded-lg px-2 py-3 text-center text-slate-800 focus:outline-none focus:border-[#005AEB] transition">
+                            </div>
+                        </div>
+
+                        <!-- 희망 상담 전형 제 1지망 -->
+                        <div>
+                            <label class="block text-sm font-bold text-slate-800 mb-2">희망 상담 전형 제 1지망 <span class="text-red-500">*</span></label>
+                            <div class="relative">
+                                <select class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-slate-700 focus:outline-none focus:border-[#005AEB] transition appearance-none">
+                                    <option value="" class="text-slate-400">(선택)</option>
+                                    <option value="yonsei_biz">연세대 상경계</option>
+                                    <option value="sky_sci">연고대 이공계</option>
+                                    <option value="sky_essay">연고대 논술</option>
+                                    <option value="yonsei_underwood">연세대 언더우드</option>
+                                    <option value="in_seoul_humanities">인서울 문과</option>
+                                    <option value="in_seoul_science">인서울 이과</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-400">
+                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 희망 상담 전형 제 2지망 -->
+                        <div>
+                            <label class="block text-sm font-bold text-slate-800 mb-2">희망 상담 전형 제 2지망</label>
+                            <div class="relative">
+                                <select class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-slate-700 focus:outline-none focus:border-[#005AEB] transition appearance-none">
+                                    <option value="" class="text-slate-400">(선택)</option>
+                                    <option value="yonsei_biz">연세대 상경계</option>
+                                    <option value="sky_sci">연고대 이공계</option>
+                                    <option value="sky_essay">연고대 논술</option>
+                                    <option value="yonsei_underwood">연세대 언더우드</option>
+                                    <option value="in_seoul_humanities">인서울 문과</option>
+                                    <option value="in_seoul_science">인서울 이과</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-400">
+                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 희망 상담 방식 -->
+                        <div class="md:col-span-2 lg:col-span-1">
+                            <label class="block text-sm font-bold text-slate-800 mb-2">희망 상담 방식 <span class="text-slate-400 font-normal text-xs">(추천 : 대면>Zoom>유선)</span> <span class="text-red-500">*</span></label>
+                            <div class="flex gap-4 mt-3">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="w-4 h-4 text-[#005AEB] border-slate-300 rounded"> <span class="text-sm">대면</span></label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="w-4 h-4 text-[#005AEB] border-slate-300 rounded"> <span class="text-sm">유선</span></label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="w-4 h-4 text-[#005AEB] border-slate-300 rounded"> <span class="text-sm">Zoom</span></label>
+                            </div>
+                        </div>
+                        <!-- 상담 가능 시각 -->
+                        <div class="md:col-span-2 lg:col-span-1">
+                            <label class="block text-sm font-bold text-slate-800 mb-2">상담 가능 시각 <span class="text-slate-400 font-normal text-xs">(ex. 평일 19시~20시 사이 주말 제외 가능합니다)</span> <span class="text-red-500">*</span></label>
+                            <input type="text" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-slate-800 focus:outline-none focus:border-[#005AEB] transition">
+                        </div>
+                    </div>
+
+                    <!-- 문의내용 -->
+                    <div class="mt-2">
+                        <label class="block text-sm font-bold text-slate-800 mb-2">문의내용 <span class="text-red-500">*</span></label>
+                        <textarea rows="4" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-slate-800 focus:outline-none focus:border-[#005AEB] transition resize-none"></textarea>
+                    </div>
+
+                    <!-- BLIS를 어떻게 알게되셨나요? -->
+                    <div class="mt-2">
+                        <label class="block text-sm font-bold text-slate-800 mb-4">BLIS를 어떻게 알게되셨나요? <span class="text-red-500">*</span></label>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-y-4 gap-x-2">
+                            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="w-4 h-4 text-[#005AEB] border-slate-300 rounded"> <span class="text-sm">독편사</span></label>
+                            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="w-4 h-4 text-[#005AEB] border-slate-300 rounded"> <span class="text-sm">Google</span></label>
+                            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="w-4 h-4 text-[#005AEB] border-slate-300 rounded"> <span class="text-sm">Instagram</span></label>
+                            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="w-4 h-4 text-[#005AEB] border-slate-300 rounded"> <span class="text-sm">Youtube</span></label>
+                            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="w-4 h-4 text-[#005AEB] border-slate-300 rounded"> <span class="text-sm">네이버 블로그</span></label>
+                            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="w-4 h-4 text-[#005AEB] border-slate-300 rounded"> <span class="text-sm">지인 추천</span></label>
+                            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="w-4 h-4 text-[#005AEB] border-slate-300 rounded"> <span class="text-sm">네이버 검색</span></label>
+                        </div>
+                    </div>
+                    
+                    <!-- 암시 기호 (세로 점 3개) -->
+                    <div class="text-center text-slate-300 font-black text-2xl tracking-widest mt-6 mb-2 leading-[0.4]">
+                        <br>·<br>·<br>·<br>&nbsp;
+                    </div>
+
+                    <button type="button" class="w-full bg-[#111827] text-white font-black text-lg py-5 rounded-lg hover:bg-black transition shadow-lg border border-[#111827]">무료 진단 리포트 받기</button>
                 </form>
+                
                 <p class="text-center text-slate-500 text-sm mt-6">단순 영업이 아닌, 93년생 대표를 필두로 한 SKY/카이스트 출신 2030 전문가 집단의<br>프리미엄 해부와 합격 로드맵을 제공합니다.</p>
             </div>
         </div>

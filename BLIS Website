@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLIS 편입학원 웹 기획안</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+        
+        /* 글로벌 자간 조정 (-0.5px) */
+        body { font-family: 'Noto+Sans+KR', sans-serif; background-color: #f8fafc; color: #1e293b; letter-spacing: -0.5px; }
+        
+        /* 전체 본문 너비 1400px로 확장 */
+        .section-container { max-width: 1400px; margin: 40px auto; background: white; padding: 60px 48px; border-radius: 16px; box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.05); }
+        
+        /* Table Styles */
+        .table-strategy { width: 100%; border-collapse: collapse; margin-top: 32px; font-size: 0.95rem; border-top: 2px solid #111827; }
+        .table-strategy th, .table-strategy td { border-bottom: 1px solid #e2e8f0; padding: 16px; text-align: left; vertical-align: top; }
+        .table-strategy th { color: #475569; font-weight: 700; width: 20%; background-color: #f8fafc; }
+        .table-strategy td { color: #334155; line-height: 1.6; }
+
+        /* Mockup UI specific styles */
+        .mockup-container { margin-bottom: 32px; padding: 32px; background: #f1f5f9; border-radius: 12px; border: 1px dashed #cbd5e0; }
+        .mockup-label { font-size: 0.75rem; font-weight: 700; color: #64748b; margin-bottom: 16px; display: block; text-transform: uppercase; }
+        
+        /* 모노톤 섹션 태그 */
+        .section-tag { display: inline-block; background-color: #f1f5f9; color: #64748b; font-weight: 700; font-size: 0.75rem; padding: 4px 16px; border-radius: 9999px; margin-bottom: 16px; letter-spacing: 0.05em; border: 1px solid #e2e8f0; }
+        
+        /* 차트 애니메이션용 속성 (옵션) */
+        .chart-bar { transition: height 1s ease-out; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="max-w-[1400px] mx-auto pt-16 pb-6 text-center px-4">
+        <h1 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-4">BLIS WEB STRATEGY PLAN</h1>
+        <p class="text-slate-500 mt-3 font-medium text-lg">아임웹 기반 프리미엄 웹사이트 구축을 위한 시각화 기획 및 디자인 가이드</p>
+    </header>
+    
+    <!-- Header 구분선 -->
+    <hr class="max-w-[1400px] mx-auto border-slate-200 mt-2 mb-12">
+
+    <!-- 01. Design System & Reference (Tone Down & 밖으로 분리) -->
+    <h2 class="text-2xl font-bold text-slate-400 tracking-widest uppercase mb-6 text-center">01. Design System & Reference</h2>
+    
+    <div class="section-container mt-0">
+        
+        <!-- Design System -->
+        <div class="mb-12 max-w-5xl mx-auto">
+            <h3 class="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2">
+                <span class="w-1.5 h-6 bg-[#005AEB] inline-block"></span> 1. Design System
+            </h3>
+            <p class="text-sm text-slate-500 mb-5 ml-3 border-l-2 border-slate-200 pl-3">젊고 진취적인 느낌을 주되 차가운 느낌을 배제하고, 신뢰감과 권위를 상징하는 프리미엄 톤 앤 매너</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ml-3">
+                <!-- 1안 (Selected) -->
+                <div class="border-2 border-[#005AEB] rounded-xl p-5 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-[#005AEB] text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg">MAIN PROPOSAL</div>
+                    <div class="font-bold text-slate-800 mb-3 mt-1">1안 : Absolute Trust (Blue & Black)</div>
+                    
+                    <!-- Color Boxes -->
+                    <div class="flex h-16 rounded-t-lg overflow-hidden shadow-inner">
+                        <!-- Main (50%) -->
+                        <div class="w-1/2 bg-[#005AEB] flex items-center justify-center text-white text-xs font-bold flex-col leading-tight">
+                            <span class="opacity-70 text-[10px] font-normal mb-0.5">Main</span>#005AEB
+                        </div>
+                        <!-- Sub (25%) -->
+                        <div class="w-1/4 bg-[#111827] flex items-center justify-center text-white text-xs font-bold flex-col leading-tight">
+                            <span class="opacity-70 text-[10px] font-normal mb-0.5">Sub</span>#111827
+                        </div>
+                        <!-- Point (25% - Bright Blue로 교체) -->
+                        <div class="w-1/4 bg-[#00A8FF] border-l border-slate-200/20 flex items-center justify-center text-white text-xs font-bold flex-col leading-tight">
+                            <span class="opacity-80 text-[10px] font-normal mb-0.5">Point</span>#00A8FF
+                        </div>
+                    </div>
+                    <!-- Gradient Bar -->
+                    <div class="h-2 w-full bg-gradient-to-r from-[#005AEB] via-[#111827] to-[#00A8FF] rounded-b-lg mb-4"></div>
+                    
+                    <p class="text-sm text-slate-600 leading-relaxed">선명하고 진취적인 일렉트릭 블루와 무게감 있는 슬레이트 블랙의 조화. 밝은 시안 블루를 포인트로 활용하여 1% 프리미엄 클래스다운 절대적인 신뢰감과 감각적인 에너지를 전달합니다.</p>
+                </div>
+
+                <!-- 2안 (Bluer Indigo로 변경) -->
+                <div class="border border-slate-200 rounded-xl p-5 shadow-sm">
+                    <div class="font-bold text-slate-800 mb-3 mt-1">2안 : Trendy & Progressive</div>
+                    
+                    <!-- Color Boxes -->
+                    <div class="flex h-16 rounded-t-lg overflow-hidden shadow-inner">
+                        <div class="w-1/2 bg-[#1D4ED8] flex items-center justify-center text-white text-xs font-bold flex-col leading-tight">
+                            <span class="opacity-70 text-[10px] font-normal mb-0.5">Main</span>#1D4ED8
+                        </div>
+                        <div class="w-1/4 bg-[#0F172A] flex items-center justify-center text-white text-xs font-bold flex-col leading-tight">
+                            <span class="opacity-70 text-[10px] font-normal mb-0.5">Sub</span>#0F172A
+                        </div>
+                        <div class="w-1/4 bg-[#10B981] flex items-center justify-center text-white text-xs font-bold flex-col leading-tight">
+                            <span class="opacity-80 text-[10px] font-normal mb-0.5">Point</span>#10B981
+                        </div>
+                    </div>
+                    <!-- Gradient Bar -->
+                    <div class="h-2 w-full bg-gradient-to-r from-[#1D4ED8] to-[#0F172A] rounded-b-lg mb-4"></div>
+                    
+                    <p class="text-sm text-slate-600 leading-relaxed">트루 블루에 가까운 신뢰도 높은 인디고 블루를 메인으로 채택하고, 산뜻한 에메랄드 그린을 포인트로 사용하여 젊고 스마트한 에듀테크(Edu-tech) 이미지를 연출합니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reference -->
+        <div class="max-w-5xl mx-auto">
+            <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+                <span class="w-1.5 h-6 bg-[#005AEB] inline-block"></span> 2. Reference 
+            </h3>
+            
+            <!-- Ref 1 -->
+            <div class="ml-3 bg-slate-50 p-6 rounded-xl border border-slate-200 shadow-sm mb-6">
+                <div class="font-bold text-[#005AEB] mb-4 text-lg"><a href="https://careers.nhn.com/" target="_blank" class="hover:underline flex items-center gap-2">🔗 NHN Careers <span class="text-xs text-slate-400 font-normal">(https://careers.nhn.com/)</span></a></div>
+                
+                <div class="mb-5 rounded-lg overflow-hidden border border-slate-200 shadow-sm max-w-4xl">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/42644530-1698-4ba9-bbee-a50bc1f30025" alt="NHN Careers Reference" class="w-full object-cover">
+                </div>
+
+                <ul class="list-disc pl-5 text-slate-700 leading-relaxed space-y-3">
+                    <li>기존 백화점식 대형 편입학원의 복잡하고 답답한 레이아웃을 탈피하고, 시원한 여백과 타이포그래피를 강조한 전문적인 와이드 레이아웃을 제안드립니다.</li>
+                    <li>역동적인 블루 톤에 학생들의 열정이 돋보이는 따뜻한 감성 이미지를 적재적소에 매치하여 진취적인 무드를 연출합니다.</li>
+                    <li>사용자의 시선을 핵심 카피와 전환 요소에 온전히 집중시켜, BLIS 편입만의 1% 프리미엄 교육 철학과 '초신성(Rising Star)'으로서의 위상을 직관적으로 전달합니다.</li>
+                </ul>
+            </div>
+
+            <!-- Ref 2 -->
+            <div class="ml-3 bg-slate-50 p-6 rounded-xl border border-slate-200 shadow-sm">
+                <div class="font-bold text-[#005AEB] mb-4 text-lg"><a href="https://www.megazone.com/" target="_blank" class="hover:underline flex items-center gap-2">🔗 MEGAZONE <span class="text-xs text-slate-400 font-normal">(https://www.megazone.com/)</span></a></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5 max-w-4xl">
+                    <div class="rounded-lg overflow-hidden border border-slate-200 shadow-sm h-full">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/4d248435-8883-417b-898a-d026befec742" alt="Megazone Reference 1" class="w-full h-full object-cover">
+                    </div>
+                    <div class="rounded-lg overflow-hidden border border-slate-200 shadow-sm h-full flex flex-col justify-center bg-white">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/c17bc02e-ded7-4f3a-86b6-a3c6d349b141" alt="Megazone Reference 2" class="w-full object-cover">
+                    </div>
+                </div>
+
+                <ul class="list-disc pl-5 text-slate-700 leading-relaxed space-y-3">
+                    <li>신뢰감을 주는 명확한 블루/블랙 컬러 대비와 모서리가 둥근(Round) 카드 UI를 활용하여, 세련되고 트렌디한 플랫폼 이미지를 구축할 것을 제안드립니다.</li>
+                    <li>가로형 띠 배너와 부드러운 그라데이션, 솔리드 컬러를 조화롭게 사용하여 시각적 지루함을 없애고 핵심 콘텐츠로의 주목도를 극대화합니다.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN UI MOCKUP TITLE (Tone Down) -->
+    <h2 class="text-2xl font-bold text-slate-400 tracking-widest uppercase mt-24 mb-6 text-center">02. Main Page UI Mockup</h2>
+
+    <!-- Section 1: RISING STAR -->
+    <div class="section-container mt-0">
+        <!-- 타이틀 가운데 정렬 -->
+        <div class="text-center mb-12">
+            <span class="section-tag">SECTION 01</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter mb-5">RISING STAR</h2>
+            <div class="text-xl md:text-2xl text-slate-500 font-medium leading-snug">
+                편입의 판도를 바꾼 라이징 스타,<br>BLIS 편입의 압도적 1% 클래스.
+            </div>
+        </div>
+        
+        <!-- Widget Mockup -->
+        <div class="mockup-container">
+            <span class="mockup-label">UI Mockup : 비주얼 섹션 위젯 (Hero)</span>
+            <div class="relative w-full h-[420px] bg-[#111827] rounded-xl overflow-hidden flex flex-col items-center justify-center shadow-2xl border border-[#005AEB]/30">
+                <div class="absolute inset-0 bg-gradient-to-tr from-[#111827] via-[#0A0A0A] to-[#005AEB] opacity-80"></div>
+                <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-50"></div>
+                
+                <div class="relative z-10 text-center px-4 w-full">
+                    <div class="text-[#00A8FF] font-bold tracking-widest text-sm mb-5 bg-white/10 inline-block px-4 py-1.5 rounded-full backdrop-blur-md border border-white/10">THE ONLY ONE, BLIS</div>
+                    <div class="text-white text-4xl md:text-5xl font-black mb-5 leading-tight tracking-tight">상위 1%를 향한<br>압도적 여정의 시작</div>
+                    <p class="text-blue-200 text-lg font-medium mb-10 tracking-wide">단 5년 만에 연고대 최종합격 89명 달성, 증명된 초신성의 클래스</p>
+                    <button class="bg-[#005AEB] text-white font-bold text-lg px-12 py-4 rounded-full hover:bg-[#00A8FF] transition duration-300 shadow-[0_0_30px_rgba(0,90,235,0.4)] border border-[#00A8FF]/50">클래스 확인하기</button>
+                </div>
+            </div>
+        </div>
+
+        <table class="table-strategy">
+            <tr>
+                <th>기획 의도</th>
+                <td>업계의 낡은 관행과 대비되는 '젊고 강력한 신흥 강자'의 이미지를 구축하여, <strong>2021년 4명에서 2026년 89명으로 폭발적으로 성장하는 BLIS 편입의 압도적인 실적 데이터</strong>를 첫 화면에서 직관적으로 각인시킵니다.</td>
+            </tr>
+            <tr>
+                <th>기대 효과</th>
+                <td>사이트 진입 직후 프리미엄 포지셔닝을 선점하여, 대형 학원 대비 높은 수강료에 대한 고객의 심리적 저항을 완벽히 차단하고 '연고대 편입 전문'이라는 압도적인 신뢰를 부여합니다.</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Section 2: QUANTUM JUMP -->
+    <div class="section-container">
+        <div class="text-center mb-12">
+            <span class="section-tag">SECTION 02</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter mb-5">QUANTUM JUMP</h2>
+            <div class="text-xl md:text-2xl text-slate-500 font-medium leading-snug">
+                타협 없는 진짜 숫자,<br>전 계열 무결점 합격 신화.
+            </div>
+        </div>
+        
+        <!-- Widget Mockup (특정 학과 국한 탈피, 89명 대통합 그래프 적용) -->
+        <div class="mockup-container">
+            <span class="mockup-label">UI Mockup : 커스텀 디자인 섹션 (Typography + SVG Chart)</span>
+            <div class="bg-white rounded-2xl p-10 border border-slate-200 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-12">
+                
+                <!-- Left: Typography & Key Message -->
+                <div class="w-full lg:w-2/5 text-left">
+                    <div class="inline-block bg-blue-50 text-[#005AEB] font-bold text-xs px-3 py-1 rounded mb-4">THE RECORD OF BLIS</div>
+                    <h3 class="text-3xl md:text-4xl font-black text-slate-900 leading-tight mb-4">
+                        BLIS 연고대 최종합격자<br>
+                        <span class="text-[#005AEB]">25년 대비 150% 성장</span>
+                    </h3>
+                    <p class="text-slate-500 text-base leading-relaxed mb-6">최상위권 강사진의 압도적인 전문성으로, 연고대 편입을 넘어 <strong>인서울 TOP7까지 합격의 스펙트럼을 폭발적으로 확장</strong>합니다.</p>
+                    <div class="flex items-center gap-3">
+                        <div class="bg-[#111827] text-white px-5 py-3 rounded-lg font-bold shadow-md">누적 합격생 89명</div>
+                        <div class="text-slate-400 text-sm font-medium">(*2026년 유료수강생 기준)</div>
+                    </div>
+                </div>
+
+                <!-- Right: SVG Growth Chart Representation -->
+                <div class="w-full lg:w-3/5 h-[300px] flex items-end justify-between gap-2 md:gap-4 px-2 md:px-6 border-b-2 border-slate-100 pb-2 relative">
+                    <!-- Background Grid Lines (Optional) -->
+                    <div class="absolute w-full border-t border-dashed border-slate-200 top-1/4 left-0 z-0"></div>
+                    <div class="absolute w-full border-t border-dashed border-slate-200 top-2/4 left-0 z-0"></div>
+                    <div class="absolute w-full border-t border-dashed border-slate-200 top-3/4 left-0 z-0"></div>
+                    
+                    <!-- 2021 -->
+                    <div class="flex flex-col items-center w-full z-10 group cursor-default">
+                        <span class="text-slate-500 font-bold mb-2 opacity-0 group-hover:opacity-100 transition duration-300">4명</span>
+                        <div class="w-full bg-blue-200 hover:bg-blue-300 transition duration-300 rounded-t-sm" style="height: 5%;"></div>
+                        <span class="text-xs text-slate-400 mt-3 font-medium">2021</span>
+                    </div>
+                    <!-- 2022 -->
+                    <div class="flex flex-col items-center w-full z-10 group cursor-default">
+                        <span class="text-slate-500 font-bold mb-2 opacity-0 group-hover:opacity-100 transition duration-300">10명</span>
+                        <div class="w-full bg-blue-300 hover:bg-blue-400 transition duration-300 rounded-t-sm" style="height: 12%;"></div>
+                        <span class="text-xs text-slate-400 mt-3 font-medium">2022</span>
+                    </div>
+                    <!-- 2023 -->
+                    <div class="flex flex-col items-center w-full z-10 group cursor-default">
+                        <span class="text-slate-600 font-bold mb-2 opacity-0 group-hover:opacity-100 transition duration-300">20명</span>
+                        <div class="w-full bg-blue-400 hover:bg-[#005AEB] transition duration-300 rounded-t-sm" style="height: 25%;"></div>
+                        <span class="text-xs text-slate-400 mt-3 font-medium">2023</span>
+                    </div>
+                    <!-- 2024 -->
+                    <div class="flex flex-col items-center w-full z-10 group cursor-default">
+                        <span class="text-[#005AEB] font-bold mb-2 opacity-0 group-hover:opacity-100 transition duration-300">40명</span>
+                        <div class="w-full bg-[#005AEB] opacity-80 hover:opacity-100 transition duration-300 rounded-t-sm" style="height: 48%;"></div>
+                        <span class="text-xs text-slate-400 mt-3 font-medium">2024</span>
+                    </div>
+                    <!-- 2025 -->
+                    <div class="flex flex-col items-center w-full z-10 group cursor-default">
+                        <span class="text-[#005AEB] font-bold mb-2">60명</span>
+                        <div class="w-full bg-[#005AEB] hover:bg-[#111827] transition duration-300 rounded-t-sm" style="height: 70%;"></div>
+                        <span class="text-xs text-slate-500 mt-3 font-bold">2025</span>
+                    </div>
+                    <!-- 2026 -->
+                    <div class="flex flex-col items-center w-full z-10 group cursor-default">
+                        <span class="text-[#111827] font-black text-xl md:text-2xl mb-2 drop-shadow-sm">89명</span>
+                        <div class="w-full bg-[#111827] rounded-t-sm relative shadow-lg" style="height: 100%;">
+                            <!-- Accent top bar -->
+                            <div class="absolute top-0 left-0 w-full h-1.5 bg-[#00A8FF]"></div>
+                        </div>
+                        <span class="text-sm text-slate-800 mt-3 font-black">2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <table class="table-strategy">
+            <tr>
+                <th>기획 의도</th>
+                <td>특정 학과(상경계 등)에만 국한된 학원이라는 편견을 원천 차단하기 위해, 세부 실적보다는 <strong>'연고대 최종합격 89명'이라는 거대한 전체 파이를 단일 시각화(그래프)하여 전면에 내세웁니다.</strong> 이를 통해 신생 부서(이공, 논술 등)의 약점을 완벽히 커버하고 압도적인 후광 효과(Halo Effect)를 창출합니다.</td>
+            </tr>
+            <tr>
+                <th>기대 효과</th>
+                <td>‘연고대 편입 전문’이라는 흔들리지 않는 브랜드 인지도를 기반으로, 새롭게 확장하는 <strong>‘인서울 TOP7 편입’ 시장까지 자연스럽게 권위를 전이</strong>시켜 잠재 타겟 고객층의 파이를 획기적으로 넓힙니다.</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Section 3: SMART MENTORING -->
+    <div class="section-container">
+        <div class="text-center mb-12">
+            <span class="section-tag">SECTION 03</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter mb-5">SMART MENTORING</h2>
+            <div class="text-xl md:text-2xl text-slate-500 font-medium leading-snug mb-4">
+                오프라인의 한계를 넘은 1:1 스마트 밀착 케어.
+            </div>
+            <div class="text-base text-slate-400 leading-relaxed max-w-3xl mx-auto">
+                온라인 수강생(80%)도 현강처럼! 노션(Notion) 기반 주간 퀘스트로 빈틈없이 밀착 관리합니다.<br>1년 패스 등록 시, 합격할 때까지 최대 3년 무료 수강을 보장합니다.
+            </div>
+        </div>
+        
+        <!-- Widget Mockup -->
+        <div class="mockup-container">
+            <span class="mockup-label">UI Mockup : 3단 아이콘/가로형 리스트 위젯</span>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 flex flex-col items-center text-center">
+                    <div class="w-14 h-14 bg-slate-100 text-[#111827] rounded-full flex items-center justify-center font-black text-2xl mb-5">1</div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-3">주간 퀘스트 (체크리스트)</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">선생님이 직접 개별 성취도에 맞춰<br>매주 설계하는 맞춤형 학습 퀘스트</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 flex flex-col items-center text-center">
+                    <div class="w-14 h-14 bg-slate-100 text-[#111827] rounded-full flex items-center justify-center font-black text-2xl mb-5">2</div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-3">Notion 1:1 밀착 트래킹</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">온라인 수강생도 완벽하게 커버하는<br>데이터 시각화 및 실시간 피드백 진행</p>
+                </div>
+                <!-- 프리미엄 혜택 강조 -->
+                <div class="bg-[#111827] p-8 rounded-xl shadow-md border-2 border-[#00A8FF] flex flex-col items-center text-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-[#00A8FF] text-[#111827] text-[10px] font-black px-3 py-1 rounded-bl-lg">PREMIUM BENEFIT</div>
+                    <div class="w-14 h-14 bg-white/10 text-[#00A8FF] rounded-full flex items-center justify-center font-black text-2xl mb-5">3</div>
+                    <h4 class="font-bold text-white text-lg mb-3">최대 3년 무료 수강 보장</h4>
+                    <p class="text-sm text-slate-300 leading-relaxed">1년 패스 결제 시 목표 대학 합격까지<br>타협 없는 동기부여와 끝장 관리</p>
+                </div>
+            </div>
+        </div>
+
+        <table class="table-strategy">
+            <tr>
+                <th>기획 의도</th>
+                <td>대형 학원의 일방향적이고 방치되는 시스템과 철저히 차별화하여, <strong>온라인 수강생 80%를 완벽히 케어하는 '노션 기반 스마트 관리'와 '최대 3년 무료 수강'이라는 실제 파격 혜택</strong>을 구체적으로 실체화합니다.</td>
+            </tr>
+            <tr>
+                <th>기대 효과</th>
+                <td>SKY/카이스트 출신 진짜 전문가들의 프리미엄 밀착 관리 수준을 명확히 인지시켜, 고단가 패키지 상품에 대한 결제 전환율을 극대화하고 가격 저항을 허뭅니다.</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Section 4: REAL STORY -->
+    <div class="section-container">
+        <div class="text-center mb-12">
+            <span class="section-tag">SECTION 04</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter mb-5">REAL STORY</h2>
+            <div class="text-xl md:text-2xl text-slate-500 font-medium leading-snug">
+                단 3분, 당신의 내일이 될 실제 합격의 기록.
+            </div>
+        </div>
+        
+        <!-- Widget Mockup (실제 링크 및 데이터 반영) -->
+        <div class="mockup-container">
+            <span class="mockup-label">UI Mockup : 갤러리/게시판 최신글 위젯 (Clickable)</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 실제 데이터 연동 1 -->
+                <a href="https://blis.co.kr/review1?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6MTt9&bmode=view&idx=170214166&t=board" target="_blank" class="block bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:border-[#005AEB] hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="bg-[#111827] text-white font-bold text-xs px-3 py-1 rounded">연세대 상경계</span>
+                        <span class="text-slate-400 text-xs">합격수기 🔗</span>
+                    </div>
+                    <h4 class="font-bold text-[#005AEB] text-base mb-3 line-clamp-1">정OO 학생 (연세대 / 경제학부)</h4>
+                    <p class="text-sm text-slate-500 line-clamp-3 leading-relaxed mb-4">베이스 제로에서 시작하여, 주간 퀘스트를 착실히 따라간 결과 연세대 상경계열이라는 기적을 만들었습니다. BLIS 선생님들의 밀착 관리 덕분에...</p>
+                    <div class="text-xs font-bold text-slate-400 hover:text-[#005AEB] transition">원문 읽어보기 &rarr;</div>
+                </a>
+                
+                <!-- 실제 데이터 연동 2 -->
+                <a href="https://blis.co.kr/review1?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6MTt9&bmode=view&idx=170213925&t=board" target="_blank" class="block bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:border-[#005AEB] hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="bg-[#111827] text-white font-bold text-xs px-3 py-1 rounded">연세대 상경계</span>
+                        <span class="text-slate-400 text-xs">합격수기 🔗</span>
+                    </div>
+                    <h4 class="font-bold text-[#005AEB] text-base mb-3 line-clamp-1">장OO 학생 (연세대 / 경제학부)</h4>
+                    <p class="text-sm text-slate-500 line-clamp-3 leading-relaxed mb-4">수학 노베이스 문과생이 연대 경제학부에 합격할 수 있었던 비결은 BLIS의 완벽한 개념 설명과 무제한 질의응답이었습니다. 공부의 방향성을 완벽히...</p>
+                    <div class="text-xs font-bold text-slate-400 hover:text-[#005AEB] transition">원문 읽어보기 &rarr;</div>
+                </a>
+                
+                <!-- 실제 데이터 연동 3 -->
+                <a href="https://blis.co.kr/review2?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjc6ImtleXdvcmQiO3M6Nzoi7Jikb+2XjCI7fQ%3D%3D&bmode=view&idx=18274416&t=board" target="_blank" class="block bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:border-[#005AEB] hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer hidden lg:block">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="bg-[#111827] text-white font-bold text-xs px-3 py-1 rounded">고려대 이공계</span>
+                        <span class="text-slate-400 text-xs">합격수기 🔗</span>
+                    </div>
+                    <h4 class="font-bold text-[#005AEB] text-base mb-3 line-clamp-1">오OO 학생 (고려대 / 기계공학부)</h4>
+                    <p class="text-sm text-slate-500 line-clamp-3 leading-relaxed mb-4">이공계 전공필기를 위한 압도적 자료와 1:1 케어. 일반적인 대형 학원에서는 절대 불가능한 개별 코디네이팅 덕분에 고려대 기계공학부 합격을...</p>
+                    <div class="text-xs font-bold text-slate-400 hover:text-[#005AEB] transition">원문 읽어보기 &rarr;</div>
+                </a>
+            </div>
+        </div>
+
+        <table class="table-strategy">
+            <tr>
+                <th>기획 의도</th>
+                <td>"영상을 보는 20분보다 텍스트 3분이 강력하다"는 실무진의 피드백을 수용하여, 사용자가 핵심을 빠르게 파악하고 본인을 투영할 수 있는 <strong>연고대 상경/이공계 리얼 합격수기(원문 연동)</strong>를 전면 배치합니다.</td>
+            </tr>
+            <tr>
+                <th>기대 효과</th>
+                <td>가장 강력하고 정제된 소셜 프루프(Social Proof)를 형성하여 고액 결제 전의 불안감을 단번에 해소하고, 즉각적인 무료 컨설팅 문의로 유도합니다.</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Section 5: INSIGHT -->
+    <div class="section-container">
+        <div class="text-center mb-12">
+            <span class="section-tag">SECTION 05</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter mb-5">INSIGHT</h2>
+            <div class="text-xl md:text-2xl text-slate-500 font-medium leading-snug mb-4">
+                누구도 모방할 수 없는 최상위권 입시 바이블.
+            </div>
+            <div class="text-base text-slate-400 leading-relaxed max-w-3xl mx-auto">
+                텍스트를 뛰어넘는 가장 깊이 있는 합격 전략. 오직 BLIS 편입에서만 독점 공개하는 프리미엄 온라인 설명회.
+            </div>
+        </div>
+        
+        <!-- Widget Mockup (카피 브랜딩 확장) -->
+        <div class="mockup-container">
+            <span class="mockup-label">UI Mockup : 텍스트 + CTA 버튼 위젯</span>
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-10 flex flex-col md:flex-row items-center justify-between shadow-sm relative overflow-hidden">
+                <div class="relative z-10 text-left md:mr-8 mb-6 md:mb-0 w-full md:w-auto flex-grow">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="bg-blue-100 text-[#005AEB] text-xs font-bold px-2 py-1 rounded">독점 영상</span>
+                        <h3 class="text-slate-900 text-2xl md:text-3xl font-bold">프리미엄 온라인 설명회 한정 공개</h3>
+                    </div>
+                    <p class="text-slate-500 text-sm md:text-base max-w-2xl leading-relaxed">대한민국에서 오직 BLIS 편입만이 제공할 수 있는 독보적인 전문 데이터. <strong>연고대 및 인서울 상위권 편입 시장의 판도를 바꿀 핵심 전략</strong>을 영상으로 바로 확인하십시오.</p>
+                </div>
+                <div class="relative z-10 flex-shrink-0 w-full md:w-auto text-right">
+                    <button class="w-full md:w-auto bg-white border-2 border-[#111827] text-[#111827] hover:bg-slate-100 font-black px-10 py-4 rounded-full transition shadow-sm whitespace-nowrap flex items-center justify-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clip-rule="evenodd" /></svg>
+                        영상 보러가기
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <table class="table-strategy">
+            <tr>
+                <th>기획 의도</th>
+                <td>단순 학원 홍보를 넘어 유튜브 등 외부 채널 유입률을 사이트 내로 연결하기 위해, 입시 지식의 정수인 '바이블' 영상을 제공하여 대체 불가능한 프리미엄 학원임을 증명합니다.</td>
+            </tr>
+            <tr>
+                <th>기대 효과</th>
+                <td>고관여 사용자의 정보 탐색 니즈를 직접 충족시키며, 편입 시장 내 최고의 전문가 집단으로서의 권위(Authority)를 확고히 다집니다.</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Section 6: CONSULTING -->
+    <div class="section-container">
+        <div class="text-center mb-12">
+            <span class="section-tag">SECTION 06</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter mb-5">CONSULTING</h2>
+            <div class="text-xl md:text-2xl text-slate-500 font-medium leading-snug mb-4">
+                상위 1%의 시선으로<br>합격 가능성을 해부하다.
+            </div>
+            <div class="text-base text-slate-400 leading-relaxed max-w-3xl mx-auto">
+                목표 대학부터 숨겨진 취약점까지. 데이터와 통찰에 기반한 1:1 맞춤 합격 로드맵을 지금 무료로 진단받으세요.
+            </div>
+        </div>
+        
+        <!-- Widget Mockup -->
+        <div class="mockup-container">
+            <span class="mockup-label">UI Mockup : 입력폼 위젯</span>
+            <div class="max-w-2xl mx-auto bg-white p-10 rounded-2xl border border-slate-200 shadow-xl relative">
+                <!-- 상단 장식 -->
+                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#005AEB] to-[#00A8FF] rounded-t-2xl"></div>
+                
+                <h3 class="text-center text-slate-900 text-2xl font-bold mb-8 tracking-wide">1:1 맞춤 합격 진단 신청</h3>
+                <form class="flex flex-col gap-5">
+                    <input type="text" placeholder="성함을 입력해주세요" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-5 py-4 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#005AEB]/20 focus:border-[#005AEB] transition">
+                    <input type="tel" placeholder="연락처 ( '-' 제외 )" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-5 py-4 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#005AEB]/20 focus:border-[#005AEB] transition">
+                    <select class="w-full bg-slate-50 border border-slate-200 rounded-lg px-5 py-4 text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#005AEB]/20 focus:border-[#005AEB] transition appearance-none">
+                        <option value="">목표 전형을 선택해주세요 (1지망)</option>
+                        <option value="yonsei_biz">연세대 상경계</option>
+                        <option value="sky_sci">연고대 이공계</option>
+                        <option value="sky_essay">연고대 논술</option>
+                        <option value="top7">인서울 TOP7 편입</option>
+                    </select>
+                    <button type="button" class="mt-4 w-full bg-[#111827] text-white font-black text-lg py-5 rounded-lg hover:bg-black transition shadow-lg border border-[#111827]">무료 진단 리포트 받기</button>
+                </form>
+                <p class="text-center text-slate-500 text-sm mt-6">단순 영업이 아닌, 93년생 대표를 필두로 한 SKY/카이스트 출신 2030 전문가 집단의<br>프리미엄 해부와 합격 로드맵을 제공합니다.</p>
+            </div>
+        </div>
+
+        <table class="table-strategy">
+            <tr>
+                <th>기획 의도</th>
+                <td>단순 방문 상담 신청을 젊고 트렌디한 전문가 집단의 '진단 및 해부'로 프레이밍하여, 고객이 영업에 끌려가는 것이 아닌 <strong>프리미엄 혜택</strong>을 제공받는 것으로 느끼게 유도합니다.</td>
+            </tr>
+            <tr>
+                <th>기대 효과</th>
+                <td>심리적 저항 없이 양질의 고관여 잠재 고객 DB를 수집하며, BLIS 편입의 차별화된 가치를 체험하게 하여 최종적인 등록 전환을 극대화합니다.</td>
+            </tr>
+        </table>
+    </div>
+
+    <footer class="text-center pb-24 pt-10 text-slate-400 text-sm font-medium tracking-wide border-t border-slate-200 max-w-[1400px] mx-auto mt-20">
+        &copy; 2026 BLIS Transfer Academy Strategy & Design Guide.
+    </footer>
+
+</body>
+</html>
